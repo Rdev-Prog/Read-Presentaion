@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: red;
+    font-family: "Jolly Lodger";
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 100dvh);
+}
+
+
+img {
+    width: 100%;
+}
+
+#overview {
+    background-image: url('/IMAGE/Overview\ image\ -\ DESKTOp.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section {
+    padding: 50px 100px;
+}
