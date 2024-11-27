@@ -1,9 +1,20 @@
 * {
     margin: 0;
     padding: 0;
-    color: red;
+    color: white;
     font-family: "Jolly Lodger";
     box-sizing: border-box;
+}
+
+
+
+.space {
+    width: 100%;
+    background-color: black;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -12,17 +23,191 @@ body {
     grid-template-rows: repeat(5, 100dvh);
 }
 
-
-img {
-    width: 100%;
-}
-
-#overview {
-    background-image: url('/IMAGE/Overview\ image\ -\ DESKTOp.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.section {
+#overview, #setting, #characterization, #plot, #theme {
     padding: 50px 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: black;
+    width: 100%;
+    height: 100dvh;
 }
+
+/* OVERVIEW */
+#overview {
+    background-image: url('IMAGE/overviewBG.png');
+    background-position: center;
+}
+
+/* OVERVIEW - NAV BAR */
+#overview {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10dvh 90dvh;
+}
+#overview nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#overview nav>a:nth-child(1) {
+    font-size: 52px;
+    text-decoration: none;
+}
+#overview nav .navLinkList {
+    display: flex;
+    gap: 32px;
+}
+#overview nav .navLinkList a {
+    font-size: 28px;
+    text-decoration: none;
+    position: relative;
+    padding: 8px;
+}
+#overview nav .navLinkList a::after {
+    position: absolute;
+    content: ' ';
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    bottom: 0;
+    transition-duration: 0.5s;
+}
+#overview nav .navLinkList a:hover::after {
+    width: 100%;
+    transition-duration: 0.2s;
+}
+
+/* OVERVIEW - MAIN CONTENT */
+#overview .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 5%;
+}
+#overview .content div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+#overview .content div:nth-child(1) p {
+    font-size: 150px;
+    line-height: 170px;
+}
+#overview .content div:nth-child(1) a {
+    font-size: 40px;
+    text-decoration: none;
+    position: relative;
+    width: fit-content;
+    padding: 12px 12px;
+}
+#overview .content div:nth-child(1) a:after {
+    position: absolute;
+    content: ' ';
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    bottom: 0;
+    transition-duration: 0.5s;
+}
+#overview .content div:nth-child(1) a:hover::after {
+    width: 100%;
+    transition-duration: 0.2s;
+}
+
+#overview .content>div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+#overview .content div:nth-child(2)>p {
+    font-size: 32px;
+    line-height: 50px;
+}
+#overview .content div:nth-child(2) .ratingCon {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+#overview .content div:nth-child(2) .ratingCon img {
+    aspect-ratio: 1;
+    width: 90px;
+}
+#overview .content div:nth-child(2) .ratingCon>.textCon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#overview .content div:nth-child(2) .ratingCon>.textCon>p {
+    font-size: 72px;
+} 
+#overview .content div:nth-child(2) .ratingCon .textCon a {
+    font-size: 24px;
+    text-decoration: none;
+    position: relative;
+    width: fit-content;
+    padding-block: 12px;
+}
+#overview .content div:nth-child(2) .ratingCon .textCon a::after {
+    position: absolute;
+    content: ' ';
+    width: 0%;
+    height: 3px;
+    background-color: white;
+    left: 0;
+    bottom: 0;
+    transition-duration: 0.5s;
+}
+#overview .content div:nth-child(2) .ratingCon .textCon a:hover::after {
+    width: 100%;
+    transition-duration: 0.2s;
+}
+#overview .content div:nth-child(2) button {
+    width: fit-content;
+    display: flex;
+    padding: 12px 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+#overview .content div:nth-child(2) button:active {
+    transform: scale(0.90);
+    transition-duration: 0.3s;
+}
+#overview .content div:nth-child(2)>button>p {
+    color: black;
+    font-size: 32px;
+}
+#overview .content div:nth-child(2) button i {
+    color: black;
+    font-size: 24px;
+}
+
+/* SETTING */
+#setting {
+    background-image: url('IMAGE/settingBG.png');
+}
+
+/* CHARACTERIZATION */
+#characterization {
+    background-image: url('IMAGE/characterizationBG.png');
+    background-position: right;
+}
+
+/* PLOT */
+#plot {
+    background-image: url('IMAGE/plotBG.png');
+    background-position: left;
+}
+
+/* THEME */
+#theme {
+    background-image: url('IMAGE/overviewBG.png');
+    background-position: center;
+}
+
