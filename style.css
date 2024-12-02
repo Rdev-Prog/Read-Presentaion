@@ -6,8 +6,6 @@
     box-sizing: border-box;
 }
 
-
-
 .space {
     width: 100%;
     background-color: black;
@@ -49,20 +47,28 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-#overview nav>a:nth-child(1) {
-    font-size: 52px;
-    text-decoration: none;
-}
+
+/* OVERVIEW - NAV BAR CONTAINER */
 #overview nav .navLinkList {
     display: flex;
     gap: 32px;
 }
+
+/* NAV LINK - "READ 101" */
+#overview nav>a:nth-child(1) {
+    font-size: 52px;
+    text-decoration: none;
+}
+
+/* NAV LINK - "OVERVIEW, SETTING, CHARACTERIZATION, PLOT, THEME" */
 #overview nav .navLinkList a {
     font-size: 28px;
     text-decoration: none;
     position: relative;
     padding: 8px;
 }
+
+/* UNDERLINE ANIMATION FOR NAV LINKS */
 #overview nav .navLinkList a::after {
     position: absolute;
     content: ' ';
@@ -84,10 +90,12 @@ body {
     grid-template-columns: repeat(2, 1fr);
     padding-top: 5%;
 }
+
+/* OVERVIEW - MAIN CONTENT - FIRST DIV ELEMENT */
 #overview .content div:nth-child(1) {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 12px;
 }
 #overview .content div:nth-child(1) p {
     font-size: 150px;
@@ -115,34 +123,47 @@ body {
     transition-duration: 0.2s;
 }
 
+/* OVERVIEW - MAIN CONTENT - SECOND DIV ELEMENT */
 #overview .content>div:nth-child(2) {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
+
+/* In this classic psychological thriller... */
 #overview .content div:nth-child(2)>p {
     font-size: 32px;
     line-height: 50px;
 }
+
+/* OVERVIEW - MAIN CONTENT - RATING CONTAINER */
 #overview .content div:nth-child(2) .ratingCon {
     width: 100%;
     display: flex;
     gap: 12px;
     justify-content: center;
 }
+
+/* OVERVIEW - MAIN CONTENT - RATING CONTAINER - STAR IMAGE */
 #overview .content div:nth-child(2) .ratingCon img {
     aspect-ratio: 1;
     width: 90px;
 }
+
+/* OVERVIEW - MAIN CONTENT - TEXT CONTAINER */
 #overview .content div:nth-child(2) .ratingCon>.textCon {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
+
+/* OVERVIEW - MAIN CONTENT - TEXT CONTAINER - "4.2 / 5" */
 #overview .content div:nth-child(2) .ratingCon>.textCon>p {
     font-size: 72px;
 } 
+
+/* OVERVIEW - MAIN CONTENT - TEXT CONTAINER - "Ratings on GoodRead" */
 #overview .content div:nth-child(2) .ratingCon .textCon a {
     font-size: 24px;
     text-decoration: none;
@@ -150,6 +171,8 @@ body {
     width: fit-content;
     padding-block: 12px;
 }
+
+/* OVERVIEW - MAIN CONTENT - TEXT CONTAINER - UNDERLINE ANIMATION */
 #overview .content div:nth-child(2) .ratingCon .textCon a::after {
     position: absolute;
     content: ' ';
@@ -175,19 +198,38 @@ body {
     cursor: pointer;
     transition-duration: 0.3s;
 }
+
+/* OVERVIEW - MAIN CONTENT - TEXT CONTAINER - BUTTON (Animation when clicked) */
 #overview .content div:nth-child(2) button:active {
     transform: scale(0.90);
     transition-duration: 0.3s;
 }
+
+/* OVERVIEW - MAIN CONTENT - TEXT CONTAINER - BUTTON - "Read now" */
 #overview .content div:nth-child(2)>button>p {
     color: black;
     font-size: 32px;
 }
+
+/* OVERVIEW - MAIN CONTENT - TEXT CONTAINER - BUTTON - book icon */
 #overview .content div:nth-child(2) button i {
     color: black;
     font-size: 24px;
 }
 
+#setting, #characterization, #theme{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15dvh 85dvh;
+}
+
+#setting h1, #characterization h1, #theme h1, #plot h1{
+    font-size: 80px;
+}
+
+#setting p, #characterization p, #theme p, #plot p{
+    font-size: 40px;
+}
 /* SETTING */
 #setting {
     background-image: url('IMAGE/settingBG.png');
@@ -203,6 +245,26 @@ body {
 #plot {
     background-image: url('IMAGE/plotBG.png');
     background-position: left;
+    display: grid;
+    grid-template-rows: 85dvh 15dvh;            
+    
+}
+
+.buttonCon{
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    align-content: start;
+}
+
+.buttonCon button{
+    border-radius: 50%;
+}
+
+#leftButton, #rightButton{
+    border: 25px solid;
+    border-color: white;
+    border-radius: 50%;
 }
 
 /* THEME */
@@ -210,4 +272,6 @@ body {
     background-image: url('IMAGE/overviewBG.png');
     background-position: center;
 }
+
+
 
