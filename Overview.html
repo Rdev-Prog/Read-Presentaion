@@ -19,17 +19,17 @@
             <a href="#overview">Read 101</a>
 
             <!-- NAVIGATION LIST -->
-            <div class="navLinkList">
-                <a href="#overview">Overview</a>
-                <a href="#setting">Setting</a>
-                <a href="#characterization">Characterization</a>
-                <a href="#plot">Plot</a>
-                <a href="#theme">Theme</a>
+            <div id="navBar" class="navLinkList">
+                <a class="navLinkItem" href="#overview">Overview</a>
+                <a class="navLinkItem" href="#setting">Setting</a>
+                <a class="navLinkItem" href="#characterization">Characterization</a>
+                <a class="navLinkItem" href="#plot">Plot</a>
+                <a class="navLinkItem" href="#theme">Theme</a>
             </div>
 
             <!-- HAMBURGER ICON CONTAINER -->
-            <div class="hamburgerIconCon" style="display: none;">
-                <i class="fa-solid fa-bars"></i>
+            <div class="hamburgerIconCon">
+                <i id="hamburgerIcon" class="fa-solid fa-bars"></i>
             </div>
 
         </nav>
@@ -51,7 +51,7 @@
                         <a href="https://www.goodreads.com/book/show/899492.The_Tell_Tale_Heart">Ratings on GoodRead</a>
                     </div>
                 </div>
-                <button>
+                <button id="readNowBtn">
                     <p>Read now!</p>
                     <i class="fa-solid fa-book-open"></i>
                 </button>
@@ -62,7 +62,7 @@
     <!-- SETTING -->
     <div id="setting" class="section">
         <h1>Where did it happen?</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ducimus impedit dolorum quae sint magnam repellendus consequatur vero cum labore. Velit veritatis voluptas recusandae error molestiae dicta perspiciatis aspernatur neque!</p>
+        <p>The setting of the story creates a tense atmosphere which highlights the narrator's psychological torment. While the story does not explicitly state that it takes place in the old man's house, there are hints to this, particularly in scenes set in the old man's bedroom. The majority of the events take place every night when the narrator looks at the old man while sleeping, which is also when the murder takes place.</p>
     </div>
 
     <!-- CHARACTERIZATION -->
@@ -76,48 +76,43 @@
         <!-- TEXT CONTAINER -->
         <div class="textCon">
             <!-- EXPOSITION -->
-            <div id="c1">
-                <h1>How did it start?</h1>  
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, nulla. Ad, numquam officia magnam eos reprehenderit fugit exercitationem sed tempore alias debitis nihil cumque unde rerum iusto molestiae itaque neque.</p>
+            <div id="c1" >
+                <h1 style="margin-bottom: 40px;">How did it start?</h1>  
+                <p>The Tell-Tale Heart by Edgar Allan Poe explores the story of a mentally unstable individual consumed by paranoia and obsession. The narrator focuses on defining the old man who has "vulture eyes," claiming that it's evil that leads to planning and committing murder. The narrator also explained how detailed they observed the old man for a week and executed the crime on the 8th day, explaining how the killer killed the old man, dismembering the old parts, and how the killer cleaned the crime scene, ensuring that there's no trace of the crime, and hid the body parts below the wooden plank. As the police officers came to investigate the disturbance, the killer talked to them without showing any remorse or fear from what they had done with the old man, but as they continued to talk, the killer heard the sound of the old man's heartbeat. The killer began to panic in his mind. Later on, eaten by guilt, the killer confessed the crime to the police officers.
+                    </p>
             </div>
 
             <!-- RISING ACTION -->
-            <div id="c2" style="display: none;">
-                <h1>What builds the tension?</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum labore nihil eaque sit commodi aliquid laborum illo delectus repellendus minus! Fugiat officiis ratione dolore molestias iusto! Ipsum repellat commodi quos.</p>
+            <div id="c2"  style="display: none;">
+                <h1 style="margin-bottom: 40px;">What builds the tension?</h1>
+                <p>The rising action begins when the narrator becomes so obsessed with the old man's eyes that he refers to them as the "vulture eye". This leads him to plan the murder of the old man to get rid of his eyes. Every night for a week, the narrator sneaks into the room of the old man to observe what the old man does in a pitch dark room and make sure that he will not wake up the old man. The tension builds as the narrator grows more paranoid on the eye and being more and more anxious about murdering the old man.</p>
             </div>
 
             <!-- CLIMAX -->
-            <div id="c3" style="display: none;">
-                <h1>What is the intense part?</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor similique deleniti distinctio rerum eos est. Itaque quia temporibus aliquam, ratione, voluptas nisi quaerat quidem, optio maxime veritatis praesentium eaque quos.</p>
+            <div id="c3"  style="display: none;">
+                <h1 style="margin-bottom: 40px;">What is the intense part?</h1>
+                <p>The climax of "The Tell-Tale Heart" occurs when the narrator, overwhelmed by the relentless sound of the old man's heartbeat, loses control. He suffocates the old man with his mattress in a moment of insanity. The sound of the heartbeat, which had previously tormented him, continues to haunt him even after the murder.</p>
             </div>
 
             <!-- FALLING ACTION -->
-            <div id="c4" style="display: none;">
-                <h1>What happens after?</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil reiciendis nemo velit repellendus odio distinctio blanditiis harum veniam libero! Dignissimos, distinctio. Sunt labore culpa praesentium quidem tempore aspernatur alias ut!</p>
+            <div id="c4"  style="display: none;">
+                <h1 style="margin-bottom: 40px;">What happens after?</h1>
+                <p>After committing the murder, the narrator hides the old man’s body under the floorboards and clean up meticulously, feeling a twisted sense of triumph and confidence in his crime. When police officers arrive in the morning to investigate a scream reported by a neighbor, he calmly welcomes them and even places their chairs above the hidden body, believing he has outsmarted them.</p>
             </div>
         
             <!-- RESOLUTION -->
-            <div id="c5" style="display: none;">
-                <h1>How is peace or closure achieved</h1>
+            <div id="c5"  style="display: none;">
+                <h1 style="margin-bottom: 40px;">How is peace or closure achieved</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis facilis ipsa perferendis at consequatur laborum officia unde, totam repellendus minus aliquam veniam asperiores corporis, maxime aspernatur ea laboriosam eius magnam?</p>            
-            </div>
-            
-            <!-- AFTERMATH -->
-            <div id="c6" style="display: none;">
-                <h1>What is the final consequence?</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque in ipsam, libero perspiciatis asperiores expedita exercitationem quibusdam voluptatibus incidunt molestias consequatur temporibus fuga delectus officia. Nisi excepturi maiores illum temporibus.</p>
             </div>
         </div>
 
         <!-- BUTTON CONTAINER -->
         <div class="buttonCon">
             <button id="left">
-                <i id= "leftButton" class="fa-solid fa-angle-left"></i>
+                <i id= "leftButton" class="fa-solid fa-angle-left" ></i>
             </button>
-            <p>Exposition</p>
+            <p id="elementOfStory">Exposition</p>
             <button id="right">
                 <i id = "rightButton" class="fa-solid fa-angle-right"></i>
             </button>
@@ -129,6 +124,8 @@
         <h1>What is the theme?</h1>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit cupiditate voluptatibus esse totam explicabo hic architecto velit tempora quod ut fuga voluptate dolore dolorum, tenetur inventore tempore mollitia libero eos.</p>            
     </div>
+
+    <!-- DITO MO ILAGAY YUNG IMAGES -->
 
     <script src="read.js"></script>
 </body>
