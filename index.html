@@ -733,49 +733,75 @@ a {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ANIMATIONS */
-.navBarTabViewAnimation {
-    animation: navBarTabViewAnimation 0.3s 1;
-}
-@keyframes navBarTabViewAnimation {
-    from {
-        transform: translateX(100px);
+    /* ANIMATIONS */
+    .navBarTabViewAnimation {
+        animation: navBarTabViewAnimation 0.3s 1;
     }
-    to {
-        transform: translateX(0);
+    @keyframes navBarTabViewAnimation {
+        from {
+            transform: translateX(100px);
+        }
+        to {
+            transform: translateX(0);
+        }
     }
-}
+    
+    .logoAnimation {
+        animation: logoAnim 1s 1;
+    }
+    @keyframes logoAnim {
+        from {
+            transform: translateY(-300px);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+    .navBarAnim {
+        animation: navBarAnim 1.2s 1;
+    }
+    @keyframes navBarAnim {
+        from {
+            transform: translateY(-300px);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+    .titleAnim {
+        animation: titleAnim 1s 1;
+    }
+    .authorAnim {
+        animation: titleAnim 1.2s 1;
+    }
+    .descAnim {
+        animation: titleAnim 1.4s 1;
+    }
+    .ratingAnim {
+        animation: titleAnim 1.6s 1;
+    }
+    @keyframes titleAnim {
+        from {
+            transform: translateX(-300px);
+        }
+        to {
+            transform: translateX(0px);
+        }
+    }
+    
+    .buttonAnim {
+        animation: buttonAnim 1.6s 1;
+    }
+    @keyframes buttonAnim {
+        from {
+            transform: scale(0);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
     </style>
     
     <script src="read.js"></script>
