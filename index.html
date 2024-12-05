@@ -159,458 +159,623 @@
     </div>
 
     <style>
-        * {
-            color: white;
-            margin: 0;
-            padding: 0;
-            font-family: "Jolly Lodger";
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .container {
-            width: 100%;
-            height: 100dvh;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(6, 100dvh);
-        }
-        
-        .container .section {
-            padding-inline: 100px;
-            overflow: hidden;
-        }
-        
-        a {
-            text-decoration: none;
-        }
-        
-        .container #overview {
-            background-image: url('IMAGE/overviewBG.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            display: grid;
-        }
-        
-        .navBarTabView {
-            position: absolute;
-            background-color: white;
-            width: 40%;
-            height: fit-content;
-            top:50px;
-            right: 10px;
-            padding: 16px;
-            padding-top: 15%;
-            display: flex;
-            flex-direction: column;
-            z-index: 2;
-            border-radius: 18px;
-        }
-        .navBarTabView > * {
-            display: block;
-        }
-        .navBarTabView a {
-            color: black;
-            text-decoration: none;
-            font-size: 16px;
-            margin-bottom: 24px;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 28px;
-        }
-        
-        /* OVERVIEW SECTION */
-        .container #overview {
-            background-image: url('IMAGE/overviewBG.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 20dvh 80dvh;
-        }
-        
-        /* NAV BAR */
-        .container #overview nav {
-            display: flex;
-            justify-content: space-between;
-            display: flex;
-            align-items: center;
-        }
-        
-        /* LOGO */
-        .container #overview nav .logoName {
-            font-size: 40px;
-        }
-        
-        /* NAV BAR LINKS */
-        .container #overview nav .navLinkList {
-            display: flex;
-            gap: 24px;
-        }
-        .container #overview nav .navLinkList a {
-            font-size: 26px;
-            padding: 6px 8px;
-            position: relative;
-        }
-        .container #overview nav .navLinkList a::after {
-            position: absolute;
-            content: ' ';
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background-color: white;
-            transition-duration: 0.4s;
-        }
-        .container #overview nav .navLinkList a:hover::after {
-            width: 100%;
-            transition-duration: 0.2s;
-        }
-        
-        /* HAMBURGER ICON */
-        .container #overview nav .hamburgerIconCon {
-            display: none;
-        }
-        
-        /* MAIN CONTENT */
-        .container #overview .content {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-        }
-        
-        /* TITLE CONTAINER */
-        .container #overview .content .titleCon {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-        .container #overview .content .titleCon p {
-            font-size: 180px;
-            line-height: 190px;
-        }
-        
-        /* AUTHOR NAME */
-        .container #overview .content .titleCon a {
-            font-size: 40px;
-            position: relative;
-            padding: 12px;
-            width: fit-content;
-        }
-        .container #overview .content .titleCon a:after {
-            position: absolute;
-            content: ' ';
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background-color: white;
-            transition-duration: 0.4s;
-        }
-        .container #overview .content .titleCon a:hover::after {
-            width: 100%;
-        }
-        
-        /* STORY INFO CONTAINER */
-        .container #overview .content .storyInfoCon {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            width: 100%;
-            height: 100%;
-        }
-        .container #overview .content .storyInfoCon>p {
-            font-size: 32px;
-            line-height: 52px;
-        }
-        
-        /* RATING CONTAINER */
-        .container #overview .content .storyInfoCon .ratingCon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: fit-content;
-            gap: 24px;
-        }
-        .container #overview .content .storyInfoCon .ratingCon>img {
-            aspect-ratio: 1;
-            height: 100%;
-        }
-        .container #overview .content .storyInfoCon .ratingCon .textCon {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100%;
-        }
-        .container #overview .content .storyInfoCon .ratingCon .textCon>p {
-            font-size: 52px;
-        }
-        
-        /* READ NOW BUTTON */
-        .container #overview .content .storyInfoCon button {
-            width: fit-content;
-            height: fit-content;
-            padding: 12px 32px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-radius: 100px;
-            border: none;
-            cursor: pointer;
-            transition-duration: 0.3s;
-        }
-        .container #overview .content .storyInfoCon button:hover .fa-book-open {
-            transform: rotate(10deg) translateY(-5px);
-            transition-duration: 0.3s;
-        }
-        .container #overview .content .storyInfoCon button i,
-        .container #overview .content .storyInfoCon button p {
-            color: black;
-            font-size: 28px;
-            transition-duration: 0.3s;
-        }
-        .container #overview .content .storyInfoCon button:active {
-            transform: scale(0.90);
-            transition-duration: 0.1s;
-        } 
-        
-        
-        
-        @media screen and (max-width: 1024px) {
-            .container .section {
-                padding-inline: 80px;
-                overflow: hidden;
-            }
-        
-        
-            .container #overview .content .titleCon p {
-                font-size: 150px;
-                line-height: 150px;
-            }
-        
-            .container #overview .content .titleCon a {
-                font-size: 36px;
-            }
-        
-            .container #overview .content .storyInfoCon>p {
-                font-size: 28px;
-                line-height: 50px;
-            }
-        }
-        
-        @media screen and (max-width: 768px) {
-            /* HAMBURGER ICON */
-            .container #overview nav .hamburgerIconCon {
-                display: block;
-                position: relative;
-                z-index: 2;
-            }
-            
-            /* NAV BAR LINKS */
-            .container #overview nav .navLinkList {
-                display: none;
-            }
-            
-            .navBarTabView {
-                position: absolute;
-                background-color: white;
-                width: 40%;
-                height: fit-content;
-                top:50px;
-                right: 60px;
-                padding: 16px;
-                padding-top: 10%;
-                display: flex;
-                flex-direction: column;
-                z-index: 2;
-                border-radius: 18px;
-            }
-            .navBarTabView > * {
-                display: block;
-            }
-            .navBarTabView a {
-                color: black;
-                text-decoration: none;
-                font-size: 16px;
-                margin-bottom: 24px;
-                padding: 12px;
-                border-radius: 8px;
-                font-size: 28px;
-            }
-        
-            /* MAIN CONTENT */
-            .container #overview .content {
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: 20dvh 80dvh;
-            }
-        
-            /* TITLE CONTAINER */
-            .container #overview .content .titleCon {
-                display: flex;
-                gap: 0px;
-            }
-            .container #overview .content .titleCon>p {
-                font-size: 80px;
-                line-height: 90px;
-            }
-            .container #overview .content .titleCon>a {
-                font-size: 36px;
-                padding-inline: 0;
-            }
-        
-            .container #overview .content .storyInfoCon>p {
-                font-size: 26px;
-                line-height: 40px;
-            }
-        
-            .container #overview .content .storyInfoCon .ratingCon>img {
-                aspect-ratio: 1;
-                height: 80%;
-            }
-            .container #overview .content .storyInfoCon .ratingCon .textCon>p {
-                font-size: 40px;
-            }
-        
-            .container #overview .content .storyInfoCon button i,
-            .container #overview .content .storyInfoCon button p {
-                font-size: 20px;
-            }
-        }
-        
-        @media screen and (max-width: 425px) {
-            .container .section {
-                padding-inline: 30px;
-            }
-        
-            .container #overview nav .logoName {
-                font-size: 32px;
-            }
-        
-            .navBarTabView {
-                position: absolute;
-                background-color: white;
-                width: 60%;
-                height: fit-content;
-                top:50px;
-                right: 15px;
-                padding: 16px;
-                padding-top: 15%;
-                display: flex;
-                flex-direction: column;
-                z-index: 2;
-                border-radius: 18px;
-            }
-            .navBarTabView > * {
-                display: block;
-            }
-            .navBarTabView a {
-                color: black;
-                text-decoration: none;
-                font-size: 16px;
-                margin-bottom: 24px;
-                padding: 12px;
-                border-radius: 8px;
-                font-size: 28px;
-            }
-        
-            /* MAIN CONTENT */
-            .container #overview .content {
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: 15dvh 80dvh;
-            }
-        
-            .container #overview .content .titleCon {
-                display: flex;
-                gap: 24px;
-            }
-        
-            .container #overview .content .titleCon>p {
-                font-size: 60px;
-                line-height: 00px;
-            }
-            .container #overview .content .titleCon>a {
-                font-size: 38px;
-            }
-        
-            .container #overview .content .storyInfoCon>p {
-                font-size: 20px;
-                line-height: 30px;
-            }
-        
-            .container #overview .content .storyInfoCon button {
-                width: 100%;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-        
-        @media screen and (max-width: 375px) {
-            .container #overview .content .titleCon>p {
-                font-size: 50px;
-                line-height: 0px;
-            }
-            .container #overview .content .titleCon>a {
-                font-size: 32px;
-            }
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        /* ANIMATIONS */
-        .navBarTabViewAnimation {
-            animation: navBarTabViewAnimation 0.3s 1;
-        }
-        @keyframes navBarTabViewAnimation {
-            from {
-                transform: translateX(100px);
-            }
-            to {
-                transform: translateX(0);
-            }
-        }
+       * {
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: "Jolly Lodger";
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 100%;
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 100dvh);
+}
+
+.container .section {
+    padding-inline: 100px;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container #overview {
+    background-image: url('IMAGE/overviewBG.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: grid;
+}
+
+#setting, #characterization, #plot, #theme, #memberCon {
+    padding-block: 30px;
+}
+
+.navBarTabView {
+    position: absolute;
+    background-color: white;
+    width: 40%;
+    height: fit-content;
+    top:50px;
+    right: 10px;
+    padding: 16px;
+    padding-top: 15%;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    border-radius: 18px;
+}
+.navBarTabView > * {
+    display: block;
+}
+.navBarTabView a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 24px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 28px;
+}
+
+/* OVERVIEW SECTION */
+.container #overview {
+    background-image: url('IMAGE/overviewBG.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20dvh 80dvh;
+}
+
+/* NAV BAR */
+.container #overview nav {
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+/* LOGO */
+.container #overview nav .logoName {
+    font-size: 40px;
+}
+
+/* NAV BAR LINKS */
+.container #overview nav .navLinkList {
+    display: flex;
+    gap: 24px;
+}
+.container #overview nav .navLinkList a {
+    font-size: 26px;
+    padding: 6px 8px;
+    position: relative;
+}
+.container #overview nav .navLinkList a::after {
+    position: absolute;
+    content: ' ';
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition-duration: 0.4s;
+}
+.container #overview nav .navLinkList a:hover::after {
+    width: 100%;
+    transition-duration: 0.2s;
+}
+
+/* HAMBURGER ICON */
+.container #overview nav .hamburgerIconCon {
+    display: none;
+}
+
+/* MAIN CONTENT */
+.container #overview .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* TITLE CONTAINER */
+.container #overview .content .titleCon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.container #overview .content .titleCon p {
+    font-size: 180px;
+    line-height: 190px;
+}
+
+/* AUTHOR NAME */
+.container #overview .content .titleCon a {
+    font-size: 40px;
+    position: relative;
+    padding: 12px;
+    width: fit-content;
+}
+.container #overview .content .titleCon a:after {
+    position: absolute;
+    content: ' ';
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition-duration: 0.4s;
+}
+.container #overview .content .titleCon a:hover::after {
+    width: 100%;
+}
+
+/* STORY INFO CONTAINER */
+.container #overview .content .storyInfoCon {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    height: 100%;
+}
+.container #overview .content .storyInfoCon>p {
+    font-size: 32px;
+    line-height: 52px;
+}
+
+/* RATING CONTAINER */
+.container #overview .content .storyInfoCon .ratingCon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    gap: 24px;
+}
+.container #overview .content .storyInfoCon .ratingCon>img {
+    aspect-ratio: 1;
+    height: 100%;
+}
+.container #overview .content .storyInfoCon .ratingCon .textCon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.container #overview .content .storyInfoCon .ratingCon .textCon>p {
+    font-size: 52px;
+}
+
+/* READ NOW BUTTON */
+.container #overview .content .storyInfoCon button {
+    width: fit-content;
+    height: fit-content;
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.container #overview .content .storyInfoCon button:hover .fa-book-open {
+    transform: rotate(10deg) translateY(-5px);
+    transition-duration: 0.3s;
+}
+.container #overview .content .storyInfoCon button i,
+.container #overview .content .storyInfoCon button p {
+    color: black;
+    font-size: 28px;
+    transition-duration: 0.3s;
+}
+.container #overview .content .storyInfoCon button:active {
+    transform: scale(0.90);
+    transition-duration: 0.1s;
+} 
+
+
+#setting, #characterization, #theme{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15dvh 85dvh;
+}
+
+#setting h1, #characterization h1, #theme h1, #plot h1{
+    font-size: 80px;
+}
+
+#setting p, #characterization p, #theme p, #plot p{
+    font-size: 40px;
+}
+/* SETTING */
+#setting {
+    background-image: url('IMAGE/settingBG.png');
+}
+
+/* CHARACTERIZATION */
+#characterization {
+    background-image: url('IMAGE/characterizationBG.png');
+    background-position: right;
+}
+
+/* PLOT */
+#plot {
+    background-image: url('IMAGE/plotBG.png');
+    background-position: left;
+    display: grid;
+    grid-template-rows: 85dvh 15dvh;            
+    
+}
+
+.buttonCon{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: start;
+}
+
+.buttonCon button {
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.buttonCon button:active {
+    transform: scale(0.90);
+    transition-duration: 0.3s;
+}
+
+
+#leftButton, #rightButton {
+    aspect-ratio: 1;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 24px;
+}
+
+
+/* THEME */
+#theme {
+    background-image: url('IMAGE/overviewBG.png');
+    background-position: center;
+}
+
+/* Info */
+#memberCon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 50px;
+}
+#Info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-inline: 50px;
+    flex-wrap: wrap;
+}
+
+#leader, #mem1, #mem2, #mem3, #mem4{
+    height: 350px;
+    border-color: black 5px solid;
+}
+
+#desc{
+    width: 100%;
+    text-align: center;
+    font-size: 70px;
+}
+
+.frame {
+    text-align: center;
+}
+
+@media screen and (max-width: 1440px) {
+    
+    #leader, #mem1, #mem2, #mem3, #mem4{
+        height: 320px;
+        border-color: black 5px solid;
+    }
+
+    #desc {
+        width: 100%;
+        text-align: center;
+        font-size: 60px;
+    }
+    
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .container .section {
+        padding-inline: 80px;
+        overflow: hidden;
+    }
+
+
+    .container #overview .content .titleCon p {
+        font-size: 150px;
+        line-height: 150px;
+    }
+
+    .container #overview .content .titleCon a {
+        font-size: 36px;
+    }
+
+    .container #overview .content .storyInfoCon>p {
+        font-size: 28px;
+        line-height: 50px;
+    }
+
+    #setting h1, #characterization h1, #theme h1, #plot h1 {
+        font-size: 60px;
+    }
+
+    #setting p, #characterization p, #theme p, #plot p {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* HAMBURGER ICON */
+    .container #overview nav .hamburgerIconCon {
+        display: block;
+        position: relative;
+        z-index: 2;
+    }
+    
+    /* NAV BAR LINKS */
+    .container #overview nav .navLinkList {
+        display: none;
+    }
+    
+    .navBarTabView {
+        position: absolute;
+        background-color: white;
+        width: 40%;
+        height: fit-content;
+        top:50px;
+        right: 60px;
+        padding: 16px;
+        padding-top: 10%;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        border-radius: 18px;
+    }
+    .navBarTabView > * {
+        display: block;
+    }
+    .navBarTabView a {
+        color: black;
+        text-decoration: none;
+        font-size: 16px;
+        margin-bottom: 24px;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 28px;
+    }
+
+    /* MAIN CONTENT */
+    .container #overview .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20dvh 80dvh;
+    }
+
+    /* TITLE CONTAINER */
+    .container #overview .content .titleCon {
+        display: flex;
+        gap: 0px;
+    }
+    .container #overview .content .titleCon>p {
+        font-size: 80px;
+        line-height: 90px;
+    }
+    .container #overview .content .titleCon>a {
+        font-size: 36px;
+        padding-inline: 0;
+    }
+
+    .container #overview .content .storyInfoCon>p {
+        font-size: 26px;
+        line-height: 40px;
+    }
+
+    .container #overview .content .storyInfoCon .ratingCon>img {
+        aspect-ratio: 1;
+        height: 80%;
+    }
+    .container #overview .content .storyInfoCon .ratingCon .textCon>p {
+        font-size: 40px;
+    }
+
+    .container #overview .content .storyInfoCon button i,
+    .container #overview .content .storyInfoCon button p {
+        font-size: 20px;
+    }
+
+    #desc {
+        width: 100%;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    #leader, #mem1, #mem2, #mem3, #mem4 {
+        height: 270px;
+        border-color: black 5px solid;
+    }
+
+    #Info {
+        padding-inline: 0px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .container .section {
+        padding-inline: 30px;
+    }
+
+    .container #overview nav .logoName {
+        font-size: 32px;
+    }
+
+    .navBarTabView {
+        position: absolute;
+        background-color: white;
+        width: 60%;
+        height: fit-content;
+        top:50px;
+        right: 15px;
+        padding: 16px;
+        padding-top: 15%;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        border-radius: 18px;
+    }
+    .navBarTabView > * {
+        display: block;
+    }
+    .navBarTabView a {
+        color: black;
+        text-decoration: none;
+        font-size: 16px;
+        margin-bottom: 24px;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 28px;
+    }
+
+    /* MAIN CONTENT */
+    .container #overview .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 15dvh 80dvh;
+    }
+
+    .container #overview .content .titleCon {
+        display: flex;
+        gap: 24px;
+    }
+
+    .container #overview .content .titleCon>p {
+        font-size: 60px;
+        line-height: 00px;
+    }
+    .container #overview .content .titleCon>a {
+        font-size: 38px;
+    }
+
+    .container #overview .content .storyInfoCon>p {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .container #overview .content .storyInfoCon button {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #setting h1, #characterization h1, #theme h1, #plot h1 {
+        font-size: 50px;
+    }
+
+    #setting p, #characterization p, #theme p, #plot p {
+        font-size: 24px;
+    }
+
+    #memberCon {
+        height: fit-content;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container #overview .content .titleCon>p {
+        font-size: 50px;
+        line-height: 0px;
+    }
+    .container #overview .content .titleCon>a {
+        font-size: 32px;
+    }
+
+    #setting h1, #characterization h1, #theme h1, #plot h1 {
+        font-size: 40px;
+    }
+
+    #setting p, #characterization p, #theme p, #plot p {
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ANIMATIONS */
+.navBarTabViewAnimation {
+    animation: navBarTabViewAnimation 0.3s 1;
+}
+@keyframes navBarTabViewAnimation {
+    from {
+        transform: translateX(100px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
     </style>
     
     <script src="read.js"></script>
