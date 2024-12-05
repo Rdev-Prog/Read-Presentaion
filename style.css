@@ -1,397 +1,350 @@
-
 * {
+    color: white;
     margin: 0;
     padding: 0;
-    color: white;
     font-family: "Jolly Lodger";
     box-sizing: border-box;
 }
 
 body {
     background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-body {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 100dvh);
-}
-
-#overview, #setting, #characterization, #plot, #theme {
-    padding: 50px 100px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: black;
+.container {
     width: 100%;
     height: 100dvh;
-}
-
-/* OVERVIEW */
-#overview {
-    background-image: url('IMAGE/overviewBG.png');
-    background-position: center;
-}
-
-/* OVERVIEW - NAV BAR */
-#overview {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10dvh 90dvh;
+    grid-template-rows: repeat(6, 100dvh);
 }
-#overview nav {
+
+.container .section {
+    padding-inline: 100px;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container #overview {
+    background-image: url('IMAGE/overviewBG.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: grid;
+}
+
+.navBarTabView {
+    position: absolute;
+    background-color: white;
+    width: 40%;
+    height: fit-content;
+    top:50px;
+    right: 10px;
+    padding: 16px;
+    padding-top: 15%;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    border-radius: 18px;
+}
+.navBarTabView > * {
+    display: block;
+}
+.navBarTabView a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 24px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 28px;
+}
+
+/* OVERVIEW SECTION */
+.container #overview {
+    background-image: url('IMAGE/overviewBG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20dvh 80dvh;
+}
+
+/* NAV BAR */
+.container #overview nav {
+    display: flex;
+    justify-content: space-between;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+}
+
+/* LOGO */
+.container #overview nav .logoName {
+    font-size: 40px;
+}
+
+/* NAV BAR LINKS */
+.container #overview nav .navLinkList {
+    display: flex;
+    gap: 24px;
+}
+.container #overview nav .navLinkList a {
+    font-size: 26px;
+    padding: 6px 8px;
     position: relative;
 }
-
-/* OVERVIEW - NAV BAR CONTAINER */
-#overview nav .navLinkList {
-    display: flex;
-    gap: 32px;
+.container #overview nav .navLinkList a::after {
+    position: absolute;
+    content: ' ';
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition-duration: 0.4s;
+}
+.container #overview nav .navLinkList a:hover::after {
+    width: 100%;
+    transition-duration: 0.2s;
 }
 
-/* OVERVIEW - NAV BAR CONTAINER */
-#overview nav .hamburgerIconCon {
+/* HAMBURGER ICON */
+.container #overview nav .hamburgerIconCon {
     display: none;
 }
 
-/* NAV LINK - "READ 101" */
-#overview nav>a:nth-child(1) {
-    font-size: 52px;
-    text-decoration: none;
-}
-
-/* NAV LINK - "OVERVIEW, SETTING, CHARACTERIZATION, PLOT, THEME" */
-#overview nav .navLinkList a {
-    font-size: 28px;
-    text-decoration: none;
-    position: relative;
-    padding: 8px;
-}
-
-/* UNDERLINE ANIMATION FOR NAV LINKS */
-#overview nav .navLinkList a::after {
-    position: absolute;
-    content: ' ';
-    width: 0%;
-    height: 2px;
-    background-color: white;
-    left: 0;
-    bottom: 0;
-    transition-duration: 0.5s;
-}
-#overview nav .navLinkList a:hover::after {
-    width: 100%;
-    transition-duration: 0.2s;
-}
-
-/* OVERVIEW - MAIN CONTENT */
-#overview .content {
+/* MAIN CONTENT */
+.container #overview .content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding-top: 5%;
 }
 
-/* OVERVIEW - MAIN CONTENT - FIRST DIV ELEMENT */
-#overview .content div:nth-child(1) {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-#overview .content div:nth-child(1) p {
-    font-size: 150px;
-    line-height: 170px;
-}
-#overview .content div:nth-child(1) a {
-    font-size: 40px;
-    text-decoration: none;
-    position: relative;
-    width: fit-content;
-    padding-inline: 12px;
-}
-#overview .content div:nth-child(1) a:after {
-    position: absolute;
-    content: ' ';
-    width: 0%;
-    height: 2px;
-    background-color: white;
-    left: 0;
-    bottom: 0;
-    transition-duration: 0.5s;
-}
-#overview .content div:nth-child(1) a:hover::after {
-    width: 100%;
-    transition-duration: 0.2s;
-}
-
-/* OVERVIEW - MAIN CONTENT - SECOND DIV ELEMENT */
-#overview .content>div:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-/* In this classic psychological thriller... */
-#overview .content div:nth-child(2)>p {
-    font-size: 32px;
-    line-height: 50px;
-}
-
-/* OVERVIEW - MAIN CONTENT - RATING CONTAINER */
-#overview .content div:nth-child(2) .ratingCon {
-    width: 100%;
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-}
-
-/* OVERVIEW - MAIN CONTENT - RATING CONTAINER - STAR IMAGE */
-#overview .content div:nth-child(2) .ratingCon img {
-    aspect-ratio: 1;
-    width: 90px;
-}
-
-/* OVERVIEW - MAIN CONTENT - TEXT CONTAINER */
-#overview .content div:nth-child(2) .ratingCon>.textCon {
+/* TITLE CONTAINER */
+.container #overview .content .titleCon {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    gap: 32px;
+}
+.container #overview .content .titleCon p {
+    font-size: 180px;
+    line-height: 190px;
 }
 
-/* OVERVIEW - MAIN CONTENT - TEXT CONTAINER - "4.2 / 5" */
-#overview .content div:nth-child(2) .ratingCon>.textCon>p {
-    font-size: 72px;
-} 
-
-/* OVERVIEW - MAIN CONTENT - TEXT CONTAINER - "Ratings on GoodRead" */
-#overview .content div:nth-child(2) .ratingCon .textCon a {
-    font-size: 24px;
-    text-decoration: none;
+/* AUTHOR NAME */
+.container #overview .content .titleCon a {
+    font-size: 40px;
     position: relative;
+    padding: 12px;
     width: fit-content;
-    padding-block: 12px;
 }
-
-/* OVERVIEW - MAIN CONTENT - TEXT CONTAINER - UNDERLINE ANIMATION */
-#overview .content div:nth-child(2) .ratingCon .textCon a::after {
+.container #overview .content .titleCon a:after {
     position: absolute;
     content: ' ';
-    width: 0%;
-    height: 3px;
-    background-color: white;
-    left: 0;
     bottom: 0;
-    transition-duration: 0.5s;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition-duration: 0.4s;
 }
-#overview .content div:nth-child(2) .ratingCon .textCon a:hover::after {
+.container #overview .content .titleCon a:hover::after {
     width: 100%;
-    transition-duration: 0.2s;
 }
-#overview .content div:nth-child(2) button {
-    width: fit-content;
+
+/* STORY INFO CONTAINER */
+.container #overview .content .storyInfoCon {
     display: flex;
-    padding: 12px 40px;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    height: 100%;
+}
+.container #overview .content .storyInfoCon>p {
+    font-size: 32px;
+    line-height: 52px;
+}
+
+/* RATING CONTAINER */
+.container #overview .content .storyInfoCon .ratingCon {
+    display: flex;
     align-items: center;
     justify-content: center;
+    width: fit-content;
+    gap: 24px;
+}
+.container #overview .content .storyInfoCon .ratingCon>img {
+    aspect-ratio: 1;
+    height: 100%;
+}
+.container #overview .content .storyInfoCon .ratingCon .textCon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.container #overview .content .storyInfoCon .ratingCon .textCon>p {
+    font-size: 52px;
+}
+
+/* READ NOW BUTTON */
+.container #overview .content .storyInfoCon button {
+    width: fit-content;
+    height: fit-content;
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
     gap: 12px;
     border-radius: 100px;
     border: none;
     cursor: pointer;
     transition-duration: 0.3s;
 }
-
-/* OVERVIEW - MAIN CONTENT - TEXT CONTAINER - BUTTON (Animation when clicked) */
-#overview .content div:nth-child(2) button:active {
+.container #overview .content .storyInfoCon button:hover .fa-book-open {
+    transform: rotate(10deg) translateY(-5px);
+    transition-duration: 0.3s;
+}
+.container #overview .content .storyInfoCon button i,
+.container #overview .content .storyInfoCon button p {
+    color: black;
+    font-size: 28px;
+    transition-duration: 0.3s;
+}
+.container #overview .content .storyInfoCon button:active {
     transform: scale(0.90);
-    transition-duration: 0.3s;
-}
-
-/* OVERVIEW - MAIN CONTENT - TEXT CONTAINER - BUTTON - "Read now" */
-#overview .content div:nth-child(2)>button>p {
-    color: black;
-    font-size: 32px;
-}
-
-/* OVERVIEW - MAIN CONTENT - TEXT CONTAINER - BUTTON - book icon */
-#overview .content div:nth-child(2) button i {
-    color: black;
-    font-size: 24px;
-}
-
-#setting, #characterization, #theme{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 15dvh 85dvh;
-}
-
-#setting h1, #characterization h1, #theme h1, #plot h1{
-    font-size: 80px;
-}
-
-#setting p, #characterization p, #theme p, #plot p{
-    font-size: 40px;
-}
-/* SETTING */
-#setting {
-    background-image: url('IMAGE/settingBG.png');
-}
-
-/* CHARACTERIZATION */
-#characterization {
-    background-image: url('IMAGE/characterizationBG.png');
-    background-position: right;
-}
-
-/* PLOT */
-#plot {
-    background-image: url('IMAGE/plotBG.png');
-    background-position: left;
-    display: grid;
-    grid-template-rows: 85dvh 15dvh;            
-    
-}
-
-.buttonCon{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    align-content: start;
-}
-
-.buttonCon button {
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    transition-duration: 0.3s;
-}
-
-.buttonCon button:active {
-    transform: scale(0.90);
-    transition-duration: 0.3s;
-}
+    transition-duration: 0.1s;
+} 
 
 
-#leftButton, #rightButton {
-    aspect-ratio: 1;
-    width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    font-size: 24px;
-}
-
-
-/* THEME */
-#theme {
-    background-image: url('IMAGE/overviewBG.png');
-    background-position: center;
-}
 
 @media screen and (max-width: 1024px) {
-    #overview .content div:nth-child(1) p {
-        font-size: 120px;
-        line-height: 140px;
+    .container .section {
+        padding-inline: 80px;
+        overflow: hidden;
     }
 
-    #overview nav>a:nth-child(1) {
-        font-size: 40px;
-        text-decoration: none;
+
+    .container #overview .content .titleCon p {
+        font-size: 150px;
+        line-height: 150px;
     }
 
-    #overview nav .navLinkList a {
-        font-size: 26px;
-        text-decoration: none;
-        position: relative;
-        padding: 8px;
+    .container #overview .content .titleCon a {
+        font-size: 36px;
     }
 
-    #overview .content div:nth-child(2)>p {
+    .container #overview .content .storyInfoCon>p {
         font-size: 28px;
         line-height: 50px;
-    }
-
-    #overview .content div:nth-child(2) .ratingCon {
-        align-items: center;
-    }
-
-    #overview .content div:nth-child(2) .ratingCon img {
-        width: 80px;
-        height: 80px;
-    }
-
-    #overview .content div:nth-child(2) .ratingCon>.textCon>p {
-        font-size: 52px;
-    }
-
-    #overview .content div:nth-child(2) button {
-        scale: 0.9;
-    }
-
-    #setting h1, #characterization h1, #theme h1, #plot h1 {
-        font-size: 64px;
-    }
-
-    #setting p, #characterization p, #theme p, #plot p {
-        font-size: 36px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    #overview nav .hamburgerIconCon {
+    /* HAMBURGER ICON */
+    .container #overview nav .hamburgerIconCon {
         display: block;
         position: relative;
-        z-index: 10;
-    }
-    #overview nav .hamburgerIconCon i {
-        font-size: 24px;
-        transition-duration: 0.3s;
-    }
-    #overview nav .hamburgerIconCon i:active {
-        transform: scale(0.90);
-        transition-duration: 0.3s;
-    }
-
-    #overview nav .navLinkList {
-        display: none;
-    }
-
-    #overview, #setting, #characterization, #plot, #theme {
-        padding-inline: 50px;
+        z-index: 2;
     }
     
-    #overview .content div:nth-child(1) p {
-        font-size: 90px;
-        line-height: 120px;
+    /* NAV BAR LINKS */
+    .container #overview nav .navLinkList {
+        display: none;
     }
-
-    #overview .content div:nth-child(2)>p {
-        font-size: 24px;
-        line-height: 40px;
-    }
-
-    #overview .content div:nth-child(2) .ratingCon img {
-        width: 60px;
-        height: 60px;
-    }
-
-    #overview .content div:nth-child(2) .ratingCon>.textCon>p {
-        font-size: 40px;
-    }
-
+    
     .navBarTabView {
         position: absolute;
         background-color: white;
         width: 40%;
         height: fit-content;
-        top: 0;
-        right: -20px;
+        top:50px;
+        right: 60px;
+        padding: 16px;
+        padding-top: 10%;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        border-radius: 18px;
+    }
+    .navBarTabView > * {
+        display: block;
+    }
+    .navBarTabView a {
+        color: black;
+        text-decoration: none;
+        font-size: 16px;
+        margin-bottom: 24px;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 28px;
+    }
+
+    /* MAIN CONTENT */
+    .container #overview .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20dvh 80dvh;
+    }
+
+    /* TITLE CONTAINER */
+    .container #overview .content .titleCon {
+        display: flex;
+        gap: 0px;
+    }
+    .container #overview .content .titleCon>p {
+        font-size: 80px;
+        line-height: 90px;
+    }
+    .container #overview .content .titleCon>a {
+        font-size: 36px;
+        padding-inline: 0;
+    }
+
+    .container #overview .content .storyInfoCon>p {
+        font-size: 26px;
+        line-height: 40px;
+    }
+
+    .container #overview .content .storyInfoCon .ratingCon>img {
+        aspect-ratio: 1;
+        height: 80%;
+    }
+    .container #overview .content .storyInfoCon .ratingCon .textCon>p {
+        font-size: 40px;
+    }
+
+    .container #overview .content .storyInfoCon button i,
+    .container #overview .content .storyInfoCon button p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .container .section {
+        padding-inline: 30px;
+    }
+
+    .container #overview nav .logoName {
+        font-size: 32px;
+    }
+
+    .navBarTabView {
+        position: absolute;
+        background-color: white;
+        width: 60%;
+        height: fit-content;
+        top:50px;
+        right: 15px;
         padding: 16px;
         padding-top: 15%;
         display: flex;
@@ -405,148 +358,54 @@ body {
     .navBarTabView a {
         color: black;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 16px;
         margin-bottom: 24px;
         padding: 12px;
         border-radius: 8px;
         font-size: 28px;
     }
 
-    #setting h1, #characterization h1, #theme h1, #plot h1 {
-        font-size: 52px;
-    }
-    
-    #setting p, #characterization p, #theme p, #plot p {
-        font-size: 32px;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .navBarTabView {
-        width: 80%;
+    /* MAIN CONTENT */
+    .container #overview .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 15dvh 80dvh;
     }
 
-    #overview nav>a:nth-child(1) {
-        font-size: 32px;
+    .container #overview .content .titleCon {
+        display: flex;
+        gap: 24px;
     }
 
-    #overview nav .hamburgerIconCon i {
-        font-size: 20px;
-    }
-
-    #overview, #setting, #characterization, #plot, #theme {
-        padding: 24px;
-    }
-
-    #overview .content div:nth-child(1) p {
+    .container #overview .content .titleCon>p {
         font-size: 60px;
-        line-height: 70px;
+        line-height: 00px;
+    }
+    .container #overview .content .titleCon>a {
+        font-size: 38px;
     }
 
-    #overview .content div:nth-child(1) a {
-        font-size: 24px;
-        text-decoration: none;
-        position: relative;
-        width: fit-content;
-    }
-
-    #overview .content div:nth-child(2)>p {
+    .container #overview .content .storyInfoCon>p {
         font-size: 20px;
         line-height: 30px;
     }
 
-    #overview .content div:nth-child(2) .ratingCon img {
-        width: 40px;
-        height: 40px;
-    }
-
-    #overview .content div:nth-child(2) .ratingCon>.textCon>p {
-        font-size: 28px;
-    }
-
-    #overview .content div:nth-child(2) .ratingCon .textCon a {
-        font-size: 20px;
-        text-decoration: none;
-        position: relative;
-        width: fit-content;
-        padding-block: 12px;
-    }
-
-    #setting h1, #characterization h1, #theme h1, #plot h1 {
-        font-size: 44px;
-    }
-
-    #setting p, #characterization p, #theme p, #plot p {
-        font-size: 20px;
-    }
-
-    #overview .content div:nth-child(2)>button>p {
-        font-size: 24px;
-    }
-
-    #overview .content div:nth-child(2) button i {
-        font-size: 20px;
+    .container #overview .content .storyInfoCon button {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
     }
 }
 
 @media screen and (max-width: 375px) {
-    #overview .content div:nth-child(1) p {
+    .container #overview .content .titleCon>p {
         font-size: 50px;
-        line-height: 60px;
+        line-height: 0px;
     }
-
-    #overview .content div:nth-child(1) a {
-        font-size: 20px;
-        padding-inline: 0;
+    .container #overview .content .titleCon>a {
+        font-size: 32px;
     }
-
-    #overview .content div:nth-child(2)>button>p {
-        font-size: 17px;
-    }
-
-    #overview .content div:nth-child(2) button i {
-        font-size: 17px;
-    }
-
-    .navBarTabView a {
-        font-size: 24px;
-    }
-
-    #leftButton, #rightButton {
-        font-size: 16px;
-        width: 40px;
-    }
-    
 }
-/* Info */
-#Info{
-    display: flex;
-    justify-content: space-around;
-    padding-inline: 50px;
-    padding-block: 30px;
-    background-color: black ;
-
-}
-
-#leader, #mem1, #mem2, #mem3, #mem4{
-    height: 150px;
-    border-color: black 5px solid;
-    aspect-ratio: 1;
-    border-radius: 50%;
-}
-
-#desc{
-    width: 100%;
-    text-align: center;
-}
-
-.frame{
-    text-align: center  ;
-}
-
-
-
-
 
 
 
